@@ -3,7 +3,7 @@ title: Welcome
 
 ---
 
-<h1 align="center">Howdy! 👋 </h1>
+<h1 align="center">Howdy! 👋 I'm Sajal Sood</h1>
 <h3 align="center">I'm a full stack application developer who is well versed with C#, Angular, Node, React, SQL and cloud computing in Azure and AWS. Also, I recently completed a 6 month internship at CBRE Econometric Advisors, Boston, working in cross-functional scrum teams to develop data oriented applications.</h3>
 
 <p align="center">

@@ -1,5 +1,5 @@
 %{
-  site_name: "Sajal Sood",
+  site_name: "",
   site_description: "",
   date_format: "{WDfull}, {D} {Mshort} {YYYY}",
   base_url: "/",
