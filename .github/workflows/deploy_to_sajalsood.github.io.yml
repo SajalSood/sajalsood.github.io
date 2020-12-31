@@ -1,0 +1,36 @@
+name: Deploy to sajalsood.github.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+
+    container:
+      image: elixir:1.11.2-slim
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          mix local.rebar --force
+          mix local.hex --force
+          mix deps.get
+      - name: Build static files
+        run: |
+          MIX_ENV=prod mix deps.compile
+          MIX_ENV=prod mix serum.build
+          touch ./site/.nojekyll
+      - name: Deploy to sajalsood.github.io
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./site
+        with:
+          emptyCommits: false
+        
