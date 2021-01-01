@@ -12,5 +12,5 @@
     {Serum.Plugins.SitemapGenerator, args: [for: [:pages, :posts]]},
     {Serum.Plugins.LiveReloader, only: :dev}
   ],
-  theme: Serum.Themes.Essence
+  theme: Serum.Themes.Blaze
 }
