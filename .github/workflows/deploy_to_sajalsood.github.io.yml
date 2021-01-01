@@ -26,13 +26,13 @@ jobs:
           MIX_ENV=prod mix serum.build
           touch ./site/.nojekyll
       - name: Deploy to sajalsood.github.io
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          PUBLISH_BRANCH: source
-          PUBLISH_DIR: ./site
-          USER_NAME: ${{ secrets.USER_NAME }}
-          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          emptyCommits: false
+          github_token: ${{ secrets.github_token }}
+          publish_branch: source
+          publish_dir: ./site
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          allow_empty_commit: false
+
         
