@@ -31,8 +31,8 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           PUBLISH_BRANCH: source
           PUBLISH_DIR: ./site
-          USER_NAME: 'github-actions[bot]'
-          USER_EMAIL: 'github-actions[bot]@users.noreply.github.com'
+          USER_NAME: ${{ secrets.USER_NAME }}
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
         with:
           emptyCommits: false
         
