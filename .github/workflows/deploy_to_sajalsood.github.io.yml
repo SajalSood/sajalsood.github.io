@@ -15,24 +15,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set Git Config
+        run: |
+          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+
       - name: Install Dependencies
         run: |
           mix local.rebar --force
           mix local.hex --force
           mix deps.get
+          
       - name: Build static files
         run: |
           MIX_ENV=prod mix deps.compile
           MIX_ENV=prod mix serum.build
           touch ./site/.nojekyll
+
       - name: Deploy to sajalsood.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.github_token }}
           publish_branch: source
           publish_dir: ./site
-          user_name: 'SajalSood'
-          user_email: 'sajal.sood@gmail.com'
           allow_empty_commit: false
 
         
