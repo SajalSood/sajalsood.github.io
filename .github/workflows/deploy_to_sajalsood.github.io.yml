@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: elixir:1.11.2-slim
+      image: elixir:1.11.2
 
     steps:
       - uses: actions/checkout@v2
