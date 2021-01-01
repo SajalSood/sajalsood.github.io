@@ -20,7 +20,8 @@ defmodule SajalSood.MixFile do
   defp deps do
     [
       {:serum, "~> 1.5"},
-      {:serum_theme_essence, "~> 1.0"}
+      {:blaze, git: "https://github.com/sajalsood/serum-theme-blaze"}
+      # {:serum_theme_blaze, path: "../serum-theme-blaze"}
     ]
   end
 end
